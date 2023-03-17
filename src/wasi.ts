@@ -103,7 +103,7 @@ export default class WASI {
           );
         } else {
           // TODO
-          buffer.setBigUint64(time, 0n, true);
+          buffer.setBigUint64(time, BigInt(Math.floor(performance.now() * 1000000)), true);
         }
         return 0;
       },
